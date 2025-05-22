@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>  
@@ -23,6 +24,241 @@
           </svg>
         </div>
       </div>
-    </section>    
+    </section> 
+
+    <section class="countdown-block">
+      <p class="countdown-title">Faltan</p>
+      <div class="countdown-container" id="countdown">
+        <div class="countdown-item">
+          <div class="number" id="days">--</div>
+          <div class="label">Días</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="hours">--</div>
+          <div class="label">Horas</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="minutes">--</div>
+          <div class="label">Min</div>
+        </div>
+        <div class="countdown-item">
+          <div class="number" id="seconds">--</div>
+          <div class="label">Seg</div>
+        </div>
+      </div>
+    </section>
+    
+<script src="index.js"></script>
+<div class="separador-sombra"></div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+<section class="ceremonia-block">
+  <div class="ceremonia-icon">
+    <dotlottie-player src="https://lottie.host/bac7b7ba-f6af-4b44-b3ba-129d2bb5c6c3/tyWm49MGzx.lottie" background="transparent" speed="1" loop="" autoplay=""></dotlottie-player>
+  </div>
+
+  <div class="ceremonia-title">Ceremonia</div>
+
+  <div class="ceremonia-section">
+    <div class="ceremonia-label">Día</div>
+    <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 17:15 Hs.</div>
+    <a class="ceremonia-button" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento+Gastón+y+Cami&amp;dates=20251010/20251011&amp;details=¡Te+esperamos+para+celebrar+nuestro+gran+día!&amp;location=Iglesia+Lunlunta,+Franklin+Villanueva+y+Masa+Sur,+Mendoza&amp;sf=true&amp;output=xml" target="_blank">Agendar</a>
+  </div>
+
+  <div class="ceremonia-section">
+    <div class="ceremonia-label">Lugar</div>
+    <div class="ceremonia-info">Iglesia Lunlunta</div>
+    <div class="ceremonia-subinfo">Franklin Villanueva y Masa Sur</div>
+    <button class="ceremonia-button" onclick="document.getElementById('mapModal').style.display='block'">¿Cómo llegar?</button>
+  </div>
+</section>
+
+<div id="mapModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('mapModal').style.display='none'">×</span>
+    <h2 style="font-family: 'Great Vibes', cursive; color: #B87600; font-size: 2rem;">¿Cómo llegar?</h2>
+    <iframe class="map-frame" src="https://www.google.com/maps?q=-33.015150,-68.789260&amp;z=16&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <a href="https://www.google.com/maps/place/Iglesia+Lunlunta/data=!4m2!3m1!1s0x0:0x71c5767b0213cdea" class="ceremonia-button" target="_blank">Ampliar mapa</a>
+  </div>
+</div>
+
+<section class="s_section" data-snippet="s_section" data-name="Música con estilo">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+
+  <div id="music-popup">
+    <div class="popup-content">
+      <h2>¡Recibiste una invitación!</h2>
+      <p>La música de fondo es parte de la experiencia.</p>
+      <button class="btn-yes" onclick="playMusic()">Ingresar con música</button>
+      <button class="btn-no" onclick="closePopup()">Ingresar sin música</button>
+    </div>
+  </div>
+
+  
+  <div id="music-toggle" onclick="toggleMusic()" title="Música de fondo">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"></path>
+    </svg>
+  </div>
+
+  <div id="music-player">
+    <iframe id="ytplayer" width="1" height="1" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+  </div>
+  <script src="index.js"></script>
+<div class="separador-sombra"></div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<section class="ceremonia-block">
+  <div class="ceremonia-icon">
+    <dotlottie-player src="https://lottie.host/df016fe0-9ef7-466d-91c8-f3fbf76b3652/Rmhx4wNvkK.lottie" background="transparent" speed="1" style="width: 120px; height: 120px; margin: 0 auto;" loop="" autoplay=""></dotlottie-player>
+  </div>
+
+  <div class="ceremonia-title">Fiesta</div>
+
+  <div class="ceremonia-section">
+    <div class="ceremonia-label">Día</div>
+    <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 18:15 Hs.</div>
+
+    <a class="ceremonia-button" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento+-+Gastón+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Salón+Luna+India&amp;sf=true&amp;output=xml" target="_blank">
+      Agendar
+    </a>
+  </div>
+
+  <div class="ceremonia-section">
+    <div class="ceremonia-label">Lugar</div>
+    <div class="ceremonia-info">Salón Luna India</div>
+    <button class="ceremonia-button" onclick="document.getElementById('rsvpModal').style.display='block'">Confirmar asistencia</button>
+  </div>
+
+  <div class="ceremonia-section">
+    <div class="ceremonia-label">Dirección</div>
+    <div class="ceremonia-subinfo">Castro Barros M5513</div>
+    <button class="ceremonia-button" onclick="document.getElementById('mapModalFiesta').style.display='block'">¿Cómo llegar?</button>
+  </div>
+</section>
+
+
+<div id="mapModalFiesta" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('mapModalFiesta').style.display='none'">×</span>
+    <h2 style="font-family: 'Great Vibes', cursive; color: #B87600; font-size: 2rem;">¿Cómo llegar?</h2>
+
+    <iframe class="map-frame" src="https://www.google.com/maps?q=-33.014470,-68.779292&amp;z=16&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Sal%C3%B3n+Luna+India&amp;destination_place_id=&amp;destination_lat=-33.01447&amp;destination_lng=-68.779292" class="ceremonia-button" target="_blank">
+      Abrir en GPS
+    </a>
+  </div>
+</div>
+<script src="index.js"></script>
+<div class="separador-sombra"></div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<div id="rsvpModal" class="modal">
+  <div class="modal-content" style="padding: 0; overflow: hidden;">
+    <span class="close-btn" onclick="document.getElementById('rsvpModal').style.display='none'">×</span>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfwqSiC1qwLcV6c1uCFipnKSTP3cLrfEcWRdwLQKwo0CAGC0Q/viewform?embedded=true" width="100%" height="650" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 20px;">
+      Cargando…
+    </iframe>
+  </div>
+</div>
+</section>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<section class="party-wrapper">
+
+  
+  <div class="confetti-over-title">
+    <dotlottie-player src="https://lottie.host/0c356b57-41f1-4f9f-9956-cd03953c515e/H0FaowytHX.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop="" autoplay="">
+    </dotlottie-player>
+  </div>
+
+  <div class="party-title">
+    Hagamos juntos <br> una fiesta épica…
+  </div>
+
+  <div class="party-card">
+    <div class="party-subtitle">Música</div>
+
+    <div class="party-lottie">
+      <dotlottie-player src="https://lottie.host/db69d30b-7928-474f-b1a8-af1d21d49f98/duGo4dZrtb.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop="" autoplay="">
+      </dotlottie-player>
+    </div>
+
+    <div class="party-text">
+      ¿Cuál es la canción que no debe faltar en la PlayList de la fiesta?
+    </div>
+
+    <button class="party-button" onclick="document.getElementById('songModal').style.display='flex'">
+      Sugerir canción
+    </button>
+
+    <a class="party-button secondary-button" href="https://open.spotify.com/playlist/6Jcd8dw69TEvGBHJgdbsmJ" target="_blank">
+      Playlist de Spotify
+    </a>
+  </div>
+</section>
+
+<div id="songModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('songModal').style.display='none'">×</span>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDNTeOf5Bsxot27DdPl-cbx1YidedtfEL-C6Es91LCMo_rxg/viewform?embedded=true">
+      Cargando…
+    </iframe>
+  </div>
+</div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<section class="gift-wrapper">
+  <div class="gift-lottie">
+    <dotlottie-player src="https://lottie.host/442d68c0-b5be-42ca-a636-6390825d361a/fL8iStmnzf.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop="" autoplay="">
+    </dotlottie-player>
+  </div>
+
+  <div class="gift-title">Regalos</div>
+  <div class="gift-subtitle">
+    Si querés regalarnos algo más que tu hermosa presencia...
+  </div>
+
+  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'">
+    Ver más
+  </button>
+</section>
+
+
+<div id="giftModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="document.getElementById('giftModal').style.display='none'">×</span>
+    <h2>Regalos</h2>
+
+    <div class="cbu-container">
+      <p style="margin: 0;">CBU: <span id="cbu">0000003100000012</span></p>
+      <button class="copy-btn" onclick="copyCBU()" title="Copiar CBU">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 21H9c-1.1 0-2-.9-2-2V7h2v12h10v2zm3-16v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2zm-2 0H7v12h12V5z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p>Alias: alias.alias</p>
+  </div>
+</div>
+<div class="separador-sombra"></div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<section class="share-wrapper">
+  <div class="share-title">Compartimos este día junto a vos</div>
+  <div class="share-subtitle">
+    Compartí tus fotos y videos de ese hermoso día
+  </div>
+
+  <div class="share-lottie">
+    <dotlottie-player src="https://lottie.host/9937bb32-69d8-4f10-8a5e-8a5bd42bf930/ygijkW49n7.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop="" autoplay="">
+    </dotlottie-player>
+  </div>
+
+  <div class="hashtag">#gastonycamila</div>
+
+  <a class="share-button" href="https://www.instagram.com/explore/tags/gastonycamila" target="_blank">
+    Ver en Instagram
+  </a>
+</section>
 </body>
 </html>

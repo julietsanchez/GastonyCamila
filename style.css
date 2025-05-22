@@ -3,7 +3,7 @@ body {
     padding: 0;
     overflow-x: hidden;
   }
-
+button{font-family: "Montserrat";}
   .invitation-hero {
     position: relative;
     min-height: 100vh;
@@ -128,3 +128,980 @@ body {
   }
 }
   }
+  .countdown-block {
+  background-color: transparent;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.countdown-title {
+  color: #B87600;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-family: 'Great Vibes', cursive;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.8rem;
+  flex-direction: row;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+  flex-shrink: 1;
+  position: relative;
+  padding: 0 0.2rem;
+}
+
+.countdown-item .number {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #89713D;
+}
+
+.countdown-item .label {
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #B87600;
+}
+
+.countdown-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -0.3rem;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #B87600;
+  opacity: 0.4;
+}
+
+@media (max-width: 375px) {
+  .countdown-title {
+    font-size: 2.4rem;
+  }
+
+  .countdown-container {
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+
+  .countdown-item .number {
+    font-size: 1.4rem;
+  }
+
+  .countdown-item .label {
+    font-size: 0.65rem;
+  }
+
+  .countdown-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .countdown-title {
+    font-size: 4rem;
+  }
+
+  .countdown-container {
+    gap: 2.5rem;
+  }
+
+  .countdown-item .number {
+    font-size: 3.2rem;
+  }
+
+  .countdown-item .label {
+    font-size: 0.9rem;
+  }
+
+  .countdown-item:not(:last-child)::after {
+    display: block;
+    right: -1rem;
+  }
+}  
+.separador-sombra {
+  height: 50px;
+  background-color: white;
+  box-shadow: 0 -20px 30px -20px rgba(0, 0, 0, 0.2);
+}
+  .ceremonia-block {
+    background-color: white;
+    text-align: center;
+    padding: 3rem 1.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+.ceremonia-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ceremonia-icon dotlottie-player {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+
+  .ceremonia-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: #B87600;
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .ceremonia-title::before,
+  .ceremonia-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 150px;
+    background-color: #ccc;
+    margin: 1.2rem auto;
+  }
+
+  .ceremonia-section {
+    margin: 1rem 0;
+  }
+
+  .ceremonia-label {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 0.6rem;
+  }
+
+  .ceremonia-info {
+    font-family: "Montserrat";
+    font-size: 1rem;
+    color: #7D7D7D;
+    margin-bottom: 1rem;
+  }
+
+  .ceremonia-subinfo {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: -0.6rem;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+  }
+
+  /* === MODAL === */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 10vh auto;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    max-width: 95%;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .map-frame {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .ceremonia-title {
+      font-size: 4rem;
+    }
+
+    .ceremonia-icon dotlottie-player {
+      width: 120px;
+      height: 120px;
+    }
+
+    .modal-content {
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .map-frame {
+      height: 300px;
+    }
+  }
+  .ceremonia-block {
+    background-color: white;
+    text-align: center;
+    padding: 3rem 1.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+.ceremonia-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ceremonia-icon dotlottie-player {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+}
+
+  .ceremonia-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: #B87600;
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .ceremonia-title::before,
+  .ceremonia-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 150px;
+    background-color: #ccc;
+    margin: 1.2rem auto;
+  }
+
+  .ceremonia-section {
+    margin: 2rem 0;
+  }
+
+  .ceremonia-label {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 0.6rem;
+  }
+
+  .ceremonia-info {
+    font-family: "Montserrat";
+    font-size: 1rem;
+    color: #7D7D7D;
+    margin-bottom: 1rem;
+  }
+
+  .ceremonia-subinfo {
+    font-family: "Montserrat";
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: -0.6rem;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+  }
+
+  .ceremonia-button {
+    background-color: #B87600;
+    color: white !important;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    margin: 0.6rem auto;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    text-decoration: none !important;
+    font-family: inherit;
+    font-weight: bold;
+    transition: none;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* === MODAL === */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 10vh auto;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    max-width: 95%;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .map-frame {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .ceremonia-title {
+      font-size: 4rem;
+    }
+
+    .ceremonia-icon dotlottie-player {
+      width: 120px;
+      height: 120px;
+    }
+
+    .modal-content {
+      padding: 2rem;
+      max-width: 600px;
+    }
+
+    .map-frame {
+      height: 300px;
+    }
+  }
+    #music-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.9); /* fondo blanco translúcido */
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Open Sans', sans-serif;
+      padding: 2rem;
+    }
+
+    .popup-content {
+      text-align: center;
+      max-width: 360px;
+      width: 100%;
+      color: #383838;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      color: #B87600;
+    }
+
+    .popup-content p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .popup-content button {
+      margin: 0.5rem;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .btn-yes {
+      background-color: #B87600;
+      color: white;
+      box-shadow: 0 4px 12px rgba(184, 118, 0, 0.4);
+      border: none;
+    }
+
+    .btn-no {
+      background-color: transparent;
+      color: #B87600;
+      border: 2px solid #B87600;
+    }
+
+    .btn-no:hover {
+      background-color: #fcf7ef;
+    }
+
+    #music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9998;
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #music-toggle.active {
+      animation: pulse 1s infinite;
+    }
+
+    #music-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(184, 118, 0, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(184, 118, 0, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(184, 118, 0, 0);
+      }
+    }
+
+    #music-toggle svg {
+      width: 24px;
+      height: 24px;
+      fill: #B87600;
+    }
+
+    #music-player {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 480px) {
+      .popup-content h2 {
+        font-size: 2.2rem;
+      }
+
+      .popup-content p {
+        font-size: 0.95rem;
+      }
+
+      .popup-content button {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.8rem;
+      }
+    }
+    .ceremonia-block {
+      background-color: white;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+  
+    .ceremonia-icon {
+      margin-bottom: 1.5rem;
+    }
+  
+    .ceremonia-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #B87600;
+      margin: 0.5rem 0;
+      position: relative;
+    }
+  
+    .ceremonia-title::before,
+    .ceremonia-title::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 150px;
+      background-color: #ccc;
+      margin: 1.2rem auto;
+    }
+  
+    .ceremonia-section {
+      margin: 2.5rem 0;
+    }
+  
+    .ceremonia-label {
+      font-family: "Montserrat";
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #444;
+      margin-bottom: 0.6rem;
+    }
+  
+    .ceremonia-info {
+      font-family: "Montserrat";
+      font-size: 1rem;
+      color: #7D7D7D;
+      margin-bottom: 1.2rem;
+    }
+  
+    .ceremonia-subinfo {
+      font-size: 0.9rem;
+      color: #999;
+      line-height: 1.5;
+      margin: 0.6rem 0 1.2rem 0;
+    }
+    /* === MODALES === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 90%;
+      width: 600px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+      z-index: 99999;
+    }
+  
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      color: #999;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  
+    .map-frame {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .party-wrapper {
+      background-color: white;
+      padding: 3rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .confetti-over-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  
+    .party-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #B87600;
+      margin-bottom: 2rem;
+      text-align: center;
+      line-height: 1.3;
+      z-index: 2;
+      position: relative;
+    }
+  
+    .party-card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      padding: 2.5rem 1.5rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    .party-subtitle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 0rem;
+    }
+  
+    .party-lottie {
+      max-width: 240px;
+      margin: 0 auto 0.4rem;
+    }
+  
+    .party-text {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 1.5rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      font-style: italic;
+    }
+  
+    .party-button {
+      background-color: #B87600;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 300px;
+      width: 100%;
+      margin: 0.5rem auto;
+      display: block;
+      text-align: center;
+      text-decoration: none !important;
+    }
+  
+    .party-button:hover {
+      background-color: #9c6200;
+    }
+  
+    .secondary-button {
+      background-color: white;
+      color: #B87600 !important;
+      border: 2px solid #B87600;
+    }
+  
+    .secondary-button:hover {
+      background-color: white;
+    }
+  
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .modal-content {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+  
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.5rem;
+      color: #999;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+  
+    @media (max-width: 480px) {
+      .party-title {
+        font-size: 3rem;
+      }
+  
+      .party-subtitle {
+        font-size: 1.2rem;
+      }
+  
+      .party-text {
+        font-size: 0.95rem;
+      }
+  
+      .party-lottie {
+        max-width: 200px;
+      }
+  
+      iframe {
+        height: 500px;
+      }
+    }
+    .gift-wrapper {
+      background-color: white;
+      padding: 3rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .gift-lottie {
+      max-width: 150px;
+      margin: 0 auto 0.5rem;
+    }
+  
+    .gift-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #B87600;
+      margin: 0.5rem 0;
+      position: relative;
+    }
+  
+    .gift-title::before,
+    .gift-title::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 150px;
+      background-color: #ccc;
+      margin: 1.2rem auto;
+    }
+  
+    .gift-subtitle {
+      font-size: 1rem;
+      color: #999;
+      font-style: italic;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+  
+    .gift-button {
+      background-color: #B87600;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      text-decoration: none !important;
+    }
+  
+    .gift-button:hover {
+      background-color: #9c6200;
+    }
+  
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .modal-content {
+      background-color: white;
+      padding: 2rem 1rem;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      text-align: center;
+    }
+  
+    .modal-content h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: #B87600;
+      margin-bottom: 1rem;
+    }
+  
+    .modal-content p {
+      color: #666;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      font-weight: bold;
+    }
+  
+    .cbu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    .copy-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 0.3rem;
+    }
+  
+    .copy-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #B87600;
+    }
+  
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      font-size: 1.7rem;
+      color: #B87600;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  
+    @media (max-width: 480px) {
+      .gift-title {
+        font-size: 3.2rem;
+      }
+  
+      .modal-content h2 {
+        font-size: 2rem;
+      }
+    }
+    .share-wrapper {
+      background-color: white;
+      padding: 3rem 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .share-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #B87600;
+      margin: 0.5rem 0;
+      position: relative;
+    }
+    .share-subtitle {
+      font-size: 1rem;
+      color: #999;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      max-width: 400px;
+    }
+  
+    .share-lottie {
+      max-width: 200px;
+      margin-bottom: 1.5rem;
+    }
+  
+    .hashtag {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #383838;
+      margin-bottom: 2rem;
+    }
+  
+    .share-button {
+      background-color: #B87600;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 300px;
+      width: 100%;
+      text-align: center;
+      text-decoration: none !important;
+    }
+  
+    .share-button:hover {
+      background-color: #9c6200;
+    }
+  
+    @media (max-width: 480px) {
+      .share-title {
+        font-size: 2.8rem;
+      }
+  
+      .hashtag {
+        font-size: 1.6rem;
+      }
+    }
