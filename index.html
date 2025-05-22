@@ -6,9 +6,94 @@
     <title>Gastón & Camila</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>  
+</head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+      }
+
+      #music-toggle.playing svg {
+        animation: pulse 1.2s infinite;
+      }
+    </style>
+    <style>
+      .popup-content {
+        text-align: center;
+        max-width: 360px;
+        width: 100%;
+        color: #383838;
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+      }
+
+      .popup-content h2 {
+        margin-bottom: 1rem;
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.8rem;
+        color: #B87600;
+      }
+
+      .popup-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+
+      .popup-content button {
+        margin: 0.5rem;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .btn-yes {
+        background-color: #B87600;
+        color: white;
+        box-shadow: 0 4px 12px rgba(184, 118, 0, 0.4);
+        border: none;
+      }
+
+      .btn-no {
+        background-color: transparent;
+        color: #B87600;
+        border: 2px solid #B87600;
+      }
+
+      .btn-no:hover {
+        background-color: #fcf7ef;
+      }
+    </style>
+</head>
+</head>
+<body>
+    <!-- Modal de música -->
+    <div id="music-popup" style="position:fixed; inset:0; background-color:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:9999;">
+      <div class="popup-content">
+        <h2>¡Recibiste una invitación!</h2>
+        <p>La música de fondo es parte de la experiencia.</p>
+        <button class="btn-yes" onclick="playMusic()">Ingresar con música</button>
+        <button class="btn-no" onclick="skipMusic()">Ingresar sin música</button>
+      </div>
+    </div>
+
+    <!-- Contenedor del reproductor -->
+    <div id="music-player">
+      <div id="ytplayer" style="width:1px; height:1px; opacity:0; pointer-events:none; position:absolute;"></div>
+    </div>
+
+    <audio id="bg-music" loop>
+      <source src="assets/audio/musica.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
     <section class="invitation-hero">
       <div class="content">
         <div class="date"><strong>10.10.25</strong></div>
@@ -82,55 +167,31 @@
   </div>
 </div>
 
-<section class="s_section" data-snippet="s_section" data-name="Música con estilo">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet">
-
-  <div id="music-popup">
-    <div class="popup-content">
-      <h2>¡Recibiste una invitación!</h2>
-      <p>La música de fondo es parte de la experiencia.</p>
-      <button class="btn-yes" onclick="playMusic()" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Ingresar con música</button>
-      <button class="btn-no" onclick="closePopup()" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Ingresar sin música</button>
-    </div>
-  </div>
-
-  
-  <div id="music-toggle" onclick="toggleMusic()" title="Música de fondo" style="display:none; cursor:pointer; align-items:center; justify-content:center; width:40px; height:40px; background:#ccc; border-radius:50%; position: fixed; bottom: 20px; right: 20px;">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="black">
-      <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"></path>
-    </svg>
-  </div>
-
-  <div id="music-player">
-    <iframe id="ytplayer" src="" frameborder="0" allow="autoplay" allowfullscreen style="width: 1px; height: 1px; opacity: 0; pointer-events: none; position: absolute;"></iframe>
-  </div>
-  <script src="index.js"></script>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-<div class="separador-sombra"></div>
-<section class="ceremonia-block">
-  <div class="separador-sombra"></div>
-  <div class="ceremonia-icon">
-    <dotlottie-player src="https://lottie.host/df016fe0-9ef7-466d-91c8-f3fbf76b3652/Rmhx4wNvkK.lottie" background="transparent" speed="1" style="width: 120px; height: 120px; margin: 0 auto;" loop="" autoplay=""></dotlottie-player>
-  </div>
+<section class="s_section" data-snippet="s_section" data-name="Música con estilo" style="text-align: center;">
   <div class="ceremonia-title">Fiesta</div>
 
   <div class="ceremonia-section">
     <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Día</div>
     <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 18:15 Hs.</div>
-
-    <button class="ceremonia-button" onclick="window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=Casamiento+-+Gast%C3%B3n+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Sal%C3%B3n+Luna+India&amp;sf=true&amp;output=xml', '_blank')" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Agendar </button>
+    <div style="display: flex; justify-content: center;">
+      <button class="ceremonia-button" onclick="window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=Casamiento+-+Gast%C3%B3n+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Sal%C3%B3n+Luna+India&amp;sf=true&amp;output=xml', '_blank')" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Agendar </button>
+    </div>
   </div>
 
   <div class="ceremonia-section">
     <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Lugar</div>
     <div class="ceremonia-info">Salón Luna India</div>
-    <button class="ceremonia-button" onclick="document.getElementById('rsvpModal').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Confirmar asistencia</button>
+    <div style="display: flex; justify-content: center;">
+      <button class="ceremonia-button" onclick="document.getElementById('rsvpModal').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Confirmar asistencia</button>
+    </div>
   </div>
 
   <div class="ceremonia-section">
     <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Dirección</div>
     <div class="ceremonia-subinfo">Castro Barros M5513</div>
-    <button class="ceremonia-button" onclick="document.getElementById('mapModalFiesta').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">¿Cómo llegar?</button>
+    <div style="display: flex; justify-content: center;">
+      <button class="ceremonia-button" onclick="document.getElementById('mapModalFiesta').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">¿Cómo llegar?</button>
+    </div>
   </div>
 </section>
 <div class="separador-sombra"></div>
@@ -212,11 +273,10 @@
 
   <div class="gift-title">Regalos</div>
   <div class="gift-subtitle">
-    Si querés regalarnos algo más que tu hermosa presencia...
+    El mejor regalo es que estén presentes ese día. Para poder compartir todos juntos, les pedimos que nos ayuden abonando el valor de la tarjeta:
   </div>
 
-  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
-    Ver más
+  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Valor y Datos bancarios
   </button>
 </section>
 
@@ -257,5 +317,43 @@
     Ver en Instagram
   </button>
 </section>
+</section>
+<!-- Botón flotante de música -->
+<div id="music-toggle" onclick="toggleMusic()" title="Música de fondo"
+  style="display:none; cursor:pointer; align-items:center; justify-content:center; width:40px; height:40px; background:transparent; border-radius:50%; position: fixed; bottom: 20px; right: 20px;">
+  <svg id="music-icon" viewBox="0 0 24 24" width="24" height="24" fill="#B87600">
+    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"></path>
+  </svg>
+</div>
+<script>
+    function playMusic() {
+      const audio = document.getElementById('bg-music');
+      audio.volume = 0.5;
+      audio.play().then(() => {
+        console.log("Música reproducida");
+        document.getElementById('music-toggle').classList.add('playing');
+      }).catch((err) => {
+        console.error("Autoplay bloqueado:", err);
+      });
+
+      document.getElementById('music-popup').style.display = 'none';
+      document.getElementById('music-toggle').style.display = 'flex';
+    }
+    function skipMusic() {
+      document.getElementById('music-popup').style.display = 'none';
+      document.getElementById('music-toggle').style.display = 'none';
+    }
+    function toggleMusic() {
+      const audio = document.getElementById('bg-music');
+      const toggle = document.getElementById('music-toggle');
+      if (audio.paused) {
+        audio.play();
+        toggle.classList.add('playing');
+      } else {
+        audio.pause();
+        toggle.classList.remove('playing');
+      }
+    }
+</script>
 </body>
 </html>
