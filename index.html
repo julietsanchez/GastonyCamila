@@ -150,30 +150,8 @@
       <source src="assets/audio/musica.mp3" type="audio/mpeg">
       Tu navegador no soporta audio HTML5.
     </audio>
-    <section class="invitation-hero parallax-section" style="background-image: url('/assets/img/primer.jpeg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
-    <style>
-      .parallax-section {
-        /* background-image: url('assets/img/fondo-parallax.jpg');  Eliminado para evitar sobrescritura */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .parallax-section .content {
-        position: relative;
-        z-index: 2;
-      }
-
-      @media (max-width: 768px) {
-        .parallax-section {
-          background-attachment: scroll !important;
-          background-position: center top !important;
-          background-size: cover !important;
-          background-repeat: no-repeat !important;
-        }
-      }
-    </style>
+    <section class="invitation-hero parallax-section">
+      <div class="parallax-background"></div>
       <div class="content">
         <div class="date"><strong>10.10.25</strong></div>
         <hr>
@@ -188,7 +166,49 @@
           </svg>
         </div>
       </div>
-    </section> 
+    </section>
+    <style>
+      .parallax-section {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .parallax-background {
+        background-image: url('/assets/img/primer.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120%;
+        z-index: 0;
+        will-change: transform;
+        transform: translateY(0);
+      }
+
+      .parallax-section .content {
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Efecto parallax solo para desktop */
+      @media (min-width: 769px) {
+        .parallax-section .parallax-background {
+          position: fixed;
+        }
+      }
+
+      /* En mobile, imagen visible sin efecto parallax */
+      @media (max-width: 768px) {
+        .parallax-section .parallax-background {
+          position: absolute;
+          height: 100%;
+        }
+      }
+    </style>
 
     <section class="countdown-block">
       <p class="countdown-title">Faltan</p>
@@ -247,8 +267,11 @@
 </div>
 
 <section class="s_section" data-snippet="s_section" data-name="Música con estilo" style="text-align: center;">
-  <div class="ceremonia-title">Fiesta</div>
 
+  <div class="ceremonia-icon" style="display: flex; justify-content: center; align-items: center;">
+    <dotlottie-player src="https://lottie.host/df016fe0-9ef7-466d-91c8-f3fbf76b3652/Rmhx4wNvkK.lottie" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></dotlottie-player>
+  </div>
+  <div class="ceremonia-title">Fiesta</div>
   <div class="ceremonia-section">
     <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Día</div>
     <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 18:15 Hs.</div>
@@ -273,8 +296,6 @@
     </div>
   </div>
 </section>
-<div class="separador-sombra"></div>
-
 <div id="mapModalFiesta" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="document.getElementById('mapModalFiesta').style.display='none'">×</span>
@@ -303,14 +324,18 @@
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <section class="party-wrapper">
 
-  
-  <div class="confetti-over-title">
-    <dotlottie-player src="https://lottie.host/0c356b57-41f1-4f9f-9956-cd03953c515e/H0FaowytHX.lottie" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay>
+  <div style="position: relative; text-align: center;">
+    <dotlottie-player
+      src="https://lottie.host/0c356b57-41f1-4f9f-9956-cd03953c515e/H0FaowytHX.lottie"
+      background="transparent"
+      speed="1"
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; z-index: 0; pointer-events: none;"
+      loop
+      autoplay>
     </dotlottie-player>
-  </div>
-
-  <div class="party-title">
-    Hagamos juntos <br> una fiesta épica…
+    <div class="party-title" style="position: relative; z-index: 1;">
+      Hagamos juntos <br> una fiesta épica…
+    </div>
   </div>
 
   <div class="party-card">
@@ -449,4 +474,13 @@
     }
 </script>
 </body>
+<script>
+  window.addEventListener('scroll', function () {
+    const bg = document.querySelector('.parallax-background');
+    if (bg) {
+      const offset = window.scrollY;
+      bg.style.transform = `translateY(${offset * 0.4}px)`;
+    }
+  });
+</script>
 </html>
