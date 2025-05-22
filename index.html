@@ -71,12 +71,68 @@
       .btn-no:hover {
         background-color: #fcf7ef;
       }
+
+      /* Responsive styles for popup-content on mobile */
+      @media (max-width: 480px) {
+        .popup-content {
+          margin: 1rem;
+          padding: 1.5rem;
+          max-width: 90vw;
+        }
+
+        .popup-content h2 {
+          font-size: 2.2rem;
+        }
+
+        .popup-content p {
+          font-size: 0.95rem;
+        }
+
+        .popup-content button {
+          font-size: 0.95rem;
+          padding: 0.7rem 1.8rem;
+        }
+      }
+
+      /* Mejora visual para el modal de regalos en mobile */
+      @media (max-width: 480px) {
+        #giftModal .modal-content {
+          padding: 1.5rem;
+          max-width: 92vw;
+          margin: 1rem auto;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          text-align: center;
+        }
+
+        #giftModal .modal-content h2 {
+          text-align: center;
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+        }
+
+        #giftModal .cbu-container {
+          text-align: center;
+          font-size: 0.95rem;
+        }
+
+        #giftModal .cbu-container p {
+          word-break: break-word;
+          margin: 0.4rem 0;
+        }
+
+        #giftModal .cbu-container button img {
+          height: 16px;
+          width: 16px;
+          margin-left: 6px;
+        }
+      }
     </style>
 </head>
 </head>
 <body>
     <!-- Modal de música -->
-    <div id="music-popup" style="position:fixed; inset:0; background-color:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; z-index:9999;">
+    <div id="music-popup" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center; z-index: 9999; box-sizing: border-box; overflow: auto;">
       <div class="popup-content">
         <h2>¡Recibiste una invitación!</h2>
         <p>La música de fondo es parte de la experiencia.</p>
@@ -94,7 +150,27 @@
       <source src="assets/audio/musica.mp3" type="audio/mpeg">
       Tu navegador no soporta audio HTML5.
     </audio>
-    <section class="invitation-hero">
+    <section class="invitation-hero parallax-section" style="background-image: url('assets/img/primer.jpeg'); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <style>
+      .parallax-section {
+        /* background-image: url('assets/img/fondo-parallax.jpg');  Eliminado para evitar sobrescritura */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .parallax-section .content {
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (max-width: 768px) {
+        .parallax-section {
+          background-attachment: scroll;
+        }
+      }
+    </style>
       <div class="content">
         <div class="date"><strong>10.10.25</strong></div>
         <hr>
@@ -273,7 +349,9 @@
 
   <div class="gift-title">Regalos</div>
   <div class="gift-subtitle">
-    El mejor regalo es que estén presentes ese día. Para poder compartir todos juntos, les pedimos que nos ayuden abonando el valor de la tarjeta:
+    El mejor regalo es que estén presentes ese día. 
+    Para poder compartir todos juntos, les pedimos que nos ayuden
+    abonando el valor de la tarjeta:
   </div>
 
   <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Valor y Datos bancarios
@@ -282,22 +360,24 @@
 
 
 <div id="giftModal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content" style="padding: 2rem 2.5rem; max-width: 420px;">
     <span class="close-btn" onclick="document.getElementById('giftModal').style.display='none'">×</span>
-    <h2>Regalos</h2>
-
-    <div class="cbu-container">
-      <p style="margin: 0;">CBU: <span id="cbu">0000003100000012</span></p>
-      <button class="copy-btn" onclick="copyCBU()" title="Copiar CBU" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
-        <svg viewBox="0 0 24 24">
-          <path d="M19 21H9c-1.1 0-2-.9-2-2V7h2v12h10v2zm3-16v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2zm-2 0H7v12h12V5z"></path>
-        </svg>
-      </button>
+    <h2>Datos Bancarios</h2>
+    <div class="cbu-container" style="font-family: 'Montserrat', sans-serif; text-align: left;">
+      <div style="margin-bottom: 1rem;">
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+          <strong>CBU:</strong> <span id="cbu" style="user-select: all;">0000003100000012</span>
+          <button onclick="copyCBU()" style="background: none; border: none; cursor: pointer; vertical-align: middle;" title="Copiar CBU">
+            <dotlottie-player src="https://lottie.host/26250e67-40b0-40db-8b76-4a59056ef36a/DdkIYGPZBn.lottie" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></dotlottie-player>
+          </button>
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 0;"><strong>Alias:</strong></p>
+        <p id="alias" style="font-size: 1rem; margin-bottom: 1rem;"></p>
+      </div>
+      <p id="copy-confirm" style="font-size: 0.9rem; color: green; display: none;">¡CBU copiado!</p>
     </div>
-
-    <p>Alias: alias.alias</p>
-  </div>
-</div>
+  </div> <!-- cierre de .modal-content -->
+</div> <!-- cierre de #giftModal -->
 <div class="separador-sombra"></div>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <section class="share-wrapper">
@@ -353,6 +433,16 @@
         audio.pause();
         toggle.classList.remove('playing');
       }
+    }
+    function copyCBU() {
+      const cbuText = document.getElementById("cbu").innerText;
+      navigator.clipboard.writeText(cbuText).then(function () {
+        const confirm = document.getElementById("copy-confirm");
+        confirm.style.display = "block";
+        setTimeout(() => {
+          confirm.style.display = "none";
+        }, 2000);
+      });
     }
 </script>
 </body>
