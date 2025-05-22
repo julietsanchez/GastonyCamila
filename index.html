@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gastón & Camila</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -11,7 +11,7 @@
 <body>  
     <section class="invitation-hero">
       <div class="content">
-        <div class="date"><strong>15.10.25</strong></div>
+        <div class="date"><strong>10.10.25</strong></div>
         <hr>
         <p class="names">Gastón</p>
         <span class="ampersand">&amp;</span>
@@ -30,19 +30,19 @@
       <p class="countdown-title">Faltan</p>
       <div class="countdown-container" id="countdown">
         <div class="countdown-item">
-          <div class="number" id="days">--</div>
+          <div class="number" id="days" style="font-family: 'Montserrat', sans-serif;">--</div>
           <div class="label">Días</div>
         </div>
         <div class="countdown-item">
-          <div class="number" id="hours">--</div>
+          <div class="number" id="hours" style="font-family: 'Montserrat', sans-serif;">--</div>
           <div class="label">Horas</div>
         </div>
         <div class="countdown-item">
-          <div class="number" id="minutes">--</div>
+          <div class="number" id="minutes" style="font-family: 'Montserrat', sans-serif;">--</div>
           <div class="label">Min</div>
         </div>
         <div class="countdown-item">
-          <div class="number" id="seconds">--</div>
+          <div class="number" id="seconds" style="font-family: 'Montserrat', sans-serif;">--</div>
           <div class="label">Seg</div>
         </div>
       </div>
@@ -60,16 +60,16 @@
   <div class="ceremonia-title">Ceremonia</div>
 
   <div class="ceremonia-section">
-    <div class="ceremonia-label">Día</div>
+    <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Día</div>
     <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 17:15 Hs.</div>
-    <a class="ceremonia-button" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento+Gastón+y+Cami&amp;dates=20251010/20251011&amp;details=¡Te+esperamos+para+celebrar+nuestro+gran+día!&amp;location=Iglesia+Lunlunta,+Franklin+Villanueva+y+Masa+Sur,+Mendoza&amp;sf=true&amp;output=xml" target="_blank">Agendar</a>
+    <button class="ceremonia-button" onclick="window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=Casamiento+-+Gast%C3%B3n+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Sal%C3%B3n+Luna+India&amp;sf=true&amp;output=xml', '_blank')" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; border-radius: 100px; padding: 12px 64px; width: 280px; max-width: 100%; display: block; text-align: center; margin: 0 auto;">Agendar</button>
   </div>
 
   <div class="ceremonia-section">
-    <div class="ceremonia-label">Lugar</div>
+    <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Lugar</div>
     <div class="ceremonia-info">Iglesia Lunlunta</div>
     <div class="ceremonia-subinfo">Franklin Villanueva y Masa Sur</div>
-    <button class="ceremonia-button" onclick="document.getElementById('mapModal').style.display='block'">¿Cómo llegar?</button>
+    <button class="ceremonia-button" onclick="document.getElementById('mapModal').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">¿Cómo llegar?</button>
   </div>
 </section>
 
@@ -78,7 +78,7 @@
     <span class="close-btn" onclick="document.getElementById('mapModal').style.display='none'">×</span>
     <h2 style="font-family: 'Great Vibes', cursive; color: #B87600; font-size: 2rem;">¿Cómo llegar?</h2>
     <iframe class="map-frame" src="https://www.google.com/maps?q=-33.015150,-68.789260&amp;z=16&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <a href="https://www.google.com/maps/place/Iglesia+Lunlunta/data=!4m2!3m1!1s0x0:0x71c5767b0213cdea" class="ceremonia-button" target="_blank">Ampliar mapa</a>
+    <button class="ceremonia-button" onclick="window.open('https://www.google.com/maps/place/Iglesia+Lunlunta/data=!4m2!3m1!1s0x0:0x71c5767b0213cdea', '_blank')" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Ampliar mapa</button>
   </div>
 </div>
 
@@ -89,54 +89,51 @@
     <div class="popup-content">
       <h2>¡Recibiste una invitación!</h2>
       <p>La música de fondo es parte de la experiencia.</p>
-      <button class="btn-yes" onclick="playMusic()">Ingresar con música</button>
-      <button class="btn-no" onclick="closePopup()">Ingresar sin música</button>
+      <button class="btn-yes" onclick="playMusic()" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Ingresar con música</button>
+      <button class="btn-no" onclick="closePopup()" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Ingresar sin música</button>
     </div>
   </div>
 
   
-  <div id="music-toggle" onclick="toggleMusic()" title="Música de fondo">
-    <svg viewBox="0 0 24 24">
+  <div id="music-toggle" onclick="toggleMusic()" title="Música de fondo" style="display:none; cursor:pointer; align-items:center; justify-content:center; width:40px; height:40px; background:#ccc; border-radius:50%; position: fixed; bottom: 20px; right: 20px;">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="black">
       <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"></path>
     </svg>
   </div>
 
   <div id="music-player">
-    <iframe id="ytplayer" width="1" height="1" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    <iframe id="ytplayer" src="" frameborder="0" allow="autoplay" allowfullscreen style="width: 1px; height: 1px; opacity: 0; pointer-events: none; position: absolute;"></iframe>
   </div>
   <script src="index.js"></script>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <div class="separador-sombra"></div>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <section class="ceremonia-block">
+  <div class="separador-sombra"></div>
   <div class="ceremonia-icon">
     <dotlottie-player src="https://lottie.host/df016fe0-9ef7-466d-91c8-f3fbf76b3652/Rmhx4wNvkK.lottie" background="transparent" speed="1" style="width: 120px; height: 120px; margin: 0 auto;" loop="" autoplay=""></dotlottie-player>
   </div>
-
   <div class="ceremonia-title">Fiesta</div>
 
   <div class="ceremonia-section">
-    <div class="ceremonia-label">Día</div>
+    <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Día</div>
     <div class="ceremonia-info">Viernes 10 de Octubre de 2025 - 18:15 Hs.</div>
 
-    <a class="ceremonia-button" href="https://www.google.com/calendar/render?action=TEMPLATE&amp;text=Casamiento+-+Gastón+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Salón+Luna+India&amp;sf=true&amp;output=xml" target="_blank">
-      Agendar
-    </a>
+    <button class="ceremonia-button" onclick="window.open('https://calendar.google.com/calendar/u/0/r/eventedit?text=Casamiento+-+Gast%C3%B3n+%26+Camila&amp;dates=20251010/20251011&amp;details=Fiesta+de+boda+para+celebrar+el+amor.&amp;location=Sal%C3%B3n+Luna+India&amp;sf=true&amp;output=xml', '_blank')" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Agendar </button>
   </div>
 
   <div class="ceremonia-section">
-    <div class="ceremonia-label">Lugar</div>
+    <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Lugar</div>
     <div class="ceremonia-info">Salón Luna India</div>
-    <button class="ceremonia-button" onclick="document.getElementById('rsvpModal').style.display='block'">Confirmar asistencia</button>
+    <button class="ceremonia-button" onclick="document.getElementById('rsvpModal').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Confirmar asistencia</button>
   </div>
 
   <div class="ceremonia-section">
-    <div class="ceremonia-label">Dirección</div>
+    <div class="ceremonia-label" style="color: #666666; font-weight: bold;">Dirección</div>
     <div class="ceremonia-subinfo">Castro Barros M5513</div>
-    <button class="ceremonia-button" onclick="document.getElementById('mapModalFiesta').style.display='block'">¿Cómo llegar?</button>
+    <button class="ceremonia-button" onclick="document.getElementById('mapModalFiesta').style.display='block'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">¿Cómo llegar?</button>
   </div>
 </section>
-
+<div class="separador-sombra"></div>
 
 <div id="mapModalFiesta" class="modal">
   <div class="modal-content">
@@ -146,9 +143,9 @@
     <iframe class="map-frame" src="https://www.google.com/maps?q=-33.014470,-68.779292&amp;z=16&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 
-    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Sal%C3%B3n+Luna+India&amp;destination_place_id=&amp;destination_lat=-33.01447&amp;destination_lng=-68.779292" class="ceremonia-button" target="_blank">
+    <button class="ceremonia-button" onclick="window.open('https://www.google.com/maps/dir/?api=1&amp;destination=Sal%C3%B3n+Luna+India&amp;destination_place_id=&amp;destination_lat=-33.01447&amp;destination_lng=-68.779292', '_blank')" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
       Abrir en GPS
-    </a>
+    </button>
   </div>
 </div>
 <script src="index.js"></script>
@@ -188,13 +185,13 @@
       ¿Cuál es la canción que no debe faltar en la PlayList de la fiesta?
     </div>
 
-    <button class="party-button" onclick="document.getElementById('songModal').style.display='flex'">
+    <button class="party-button" onclick="document.getElementById('songModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
       Sugerir canción
     </button>
 
-    <a class="party-button secondary-button" href="https://open.spotify.com/playlist/6Jcd8dw69TEvGBHJgdbsmJ" target="_blank">
+    <button class="party-button secondary-button" onclick="window.open('https://open.spotify.com/playlist/6Jcd8dw69TEvGBHJgdbsmJ', '_blank')" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; border-radius: 100px; padding: 12px 64px; width: 280px; max-width: 100%; display: block; text-align: center; margin: 0 auto;">
       Playlist de Spotify
-    </a>
+    </button>
   </div>
 </section>
 
@@ -218,7 +215,7 @@
     Si querés regalarnos algo más que tu hermosa presencia...
   </div>
 
-  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'">
+  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
     Ver más
   </button>
 </section>
@@ -231,7 +228,7 @@
 
     <div class="cbu-container">
       <p style="margin: 0;">CBU: <span id="cbu">0000003100000012</span></p>
-      <button class="copy-btn" onclick="copyCBU()" title="Copiar CBU">
+      <button class="copy-btn" onclick="copyCBU()" title="Copiar CBU" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">
         <svg viewBox="0 0 24 24">
           <path d="M19 21H9c-1.1 0-2-.9-2-2V7h2v12h10v2zm3-16v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h12c1.1 0 2 .9 2 2zm-2 0H7v12h12V5z"></path>
         </svg>
@@ -256,9 +253,9 @@
 
   <div class="hashtag">#gastonycamila</div>
 
-  <a class="share-button" href="https://www.instagram.com/explore/tags/gastonycamila" target="_blank">
+  <button class="share-button" onclick="window.open('https://www.instagram.com/explore/tags/gastonycamila', '_blank')" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; border-radius: 100px; padding: 12px 64px; width: 280px; max-width: 100%; display: block; text-align: center; margin: 0 auto;">
     Ver en Instagram
-  </a>
+  </button>
 </section>
 </body>
 </html>

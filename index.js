@@ -24,37 +24,38 @@ setInterval(updateCountdown, 1000);
 let musicPlaying = false;
 const videoID = "wIrw5Z_Ay0Y"; // canción personalizada
 
+let ytPlayer;
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('ytplayer', {
+    height: '1',
+    width: '1',
+    videoId: 'wIrw5Z_Ay0Y',
+    playerVars: {
+      autoplay: 1,
+      mute: 1,
+      loop: 1,
+      playlist: 'wIrw5Z_Ay0Y'
+    },
+    events: {
+      'onReady': function (event) {
+        event.target.playVideo();
+      }
+    }
+  });
+}
+
 function playMusic() {
-  const player = document.getElementById('ytplayer');
-  const toggle = document.getElementById('music-toggle');
-  player.src = `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`;
-  toggle.style.display = "flex";
-  toggle.classList.add('active');
-  musicPlaying = true;
-  document.getElementById('music-popup').style.display = "none";
-}
-
-function closePopup() {
-  document.getElementById('music-popup').style.display = "none";
-}
-
-function toggleMusic() {
-  const player = document.getElementById('ytplayer');
-  const toggle = document.getElementById('music-toggle');
-
-  if (!musicPlaying) {
-    player.src = `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`;
-    toggle.classList.add('active');
-    musicPlaying = true;
+  if (window.YT && window.YT.Player) {
+    onYouTubeIframeAPIReady();
   } else {
-    player.src = "";
-    toggle.classList.remove('active');
-    musicPlaying = false;
+    let tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    let firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
   }
+
+  document.getElementById('music-popup').style.display = 'none';
+  document.getElementById('music-toggle').style.display = 'flex';
 }
-function copyCBU() {
-    const cbu = document.getElementById("cbu").textContent;
-    navigator.clipboard.writeText(cbu).then(() => {
-      alert("CBU copiado al portapapeles");
-    });
-  }
