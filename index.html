@@ -322,22 +322,58 @@
 </div>
 </section>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-<section class="party-wrapper">
-
-  <div style="position: relative; text-align: center;">
-    <dotlottie-player
-      src="https://lottie.host/0c356b57-41f1-4f9f-9956-cd03953c515e/H0FaowytHX.lottie"
-      background="transparent"
-      speed="1"
-      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; z-index: 0; pointer-events: none;"
-      loop
-      autoplay>
+<div style="position: relative; text-align: center;">
+  <dotlottie-player
+    src="https://lottie.host/0c356b57-41f1-4f9f-9956-cd03953c515e/H0FaowytHX.lottie"
+    background="transparent"
+    speed="1"
+    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; z-index: 0; pointer-events: none;"
+    loop
+    autoplay>
+  </dotlottie-player>
+  <div class="party-title" style="position: relative; z-index: 1;">
+    Hagamos juntos <br> una fiesta épica…
+  </div>
+</div>
+<section class="gift-wrapper">
+  <div class="gift-lottie">
+    <dotlottie-player src="https://lottie.host/442d68c0-b5be-42ca-a636-6390825d361a/fL8iStmnzf.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop="" autoplay="">
     </dotlottie-player>
-    <div class="party-title" style="position: relative; z-index: 1;">
-      Hagamos juntos <br> una fiesta épica…
-    </div>
   </div>
 
+  <div class="gift-title">Regalos</div>
+  <div class="gift-subtitle">
+    <strong> mejor regalo es que estén presentes ese día.</strong>
+    Para poder compartir todos juntos, les pedimos que nos ayuden
+    abonando el valor de la tarjeta:
+  </div>
+
+  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Valor y Datos bancarios
+  </button>
+</section>
+<div id="giftModal" class="modal">
+  <div class="modal-content" style="padding: 2rem 2.5rem; max-width: 420px;">
+    <span class="close-btn" onclick="document.getElementById('giftModal').style.display='none'">×</span>
+    <h2>Datos Bancarios</h2>
+    <div class="cbu-container" style="font-family: 'Montserrat', sans-serif; text-align: left;">
+      <div style="margin-bottom: 1rem;">
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+          <strong>CBU:</strong> <span id="cbu" style="user-select: all;">0720708488000003562190</span>
+          <button onclick="copyCBU()" style="background: none; border: none; cursor: pointer; vertical-align: middle;" title="Copiar CBU">
+            <dotlottie-player src="https://lottie.host/26250e67-40b0-40db-8b76-4a59056ef36a/DdkIYGPZBn.lottie" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></dotlottie-player>
+          </button>
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 0;"><strong>Alias: CAMI.WOLOCH.SANT </strong></p>
+        <p style="font-size: 1.1rem; margin-bottom: 0;"><strong>Valor de la tarjeta: $80.000 </strong></p>
+        <p id="alias" style="font-size: 1rem; margin-bottom: 1rem;"></p>
+      </div>
+      <p id="copy-confirm" style="font-size: 0.9rem; color: green; display: none;">¡CBU copiado!</p>
+    </div>
+  </div> <!-- cierre de .modal-content -->
+</div> <!-- cierre de #giftModal -->
+<div class="separador-sombra"></div>
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+<section class="party-wrapper">
   <div class="party-card">
     <div class="party-subtitle">Música</div>
 
@@ -368,45 +404,6 @@
     </iframe>
   </div>
 </div>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-<section class="gift-wrapper">
-  <div class="gift-lottie">
-    <dotlottie-player src="https://lottie.host/442d68c0-b5be-42ca-a636-6390825d361a/fL8iStmnzf.lottie" background="transparent" speed="1" style="width: 100%; height: auto;" loop="" autoplay="">
-    </dotlottie-player>
-  </div>
-
-  <div class="gift-title">Regalos</div>
-  <div class="gift-subtitle">
-    El mejor regalo es que estén presentes ese día. 
-    Para poder compartir todos juntos, les pedimos que nos ayuden
-    abonando el valor de la tarjeta:
-  </div>
-
-  <button class="gift-button" onclick="document.getElementById('giftModal').style.display='flex'" style="font-family: 'Montserrat', sans-serif; padding: 12px 64px; font-size: 1rem; border-radius: 100px; width: 100%; max-width: 280px; display: inline-block; text-align: center; white-space: nowrap;">Valor y Datos bancarios
-  </button>
-</section>
-
-
-<div id="giftModal" class="modal">
-  <div class="modal-content" style="padding: 2rem 2.5rem; max-width: 420px;">
-    <span class="close-btn" onclick="document.getElementById('giftModal').style.display='none'">×</span>
-    <h2>Datos Bancarios</h2>
-    <div class="cbu-container" style="font-family: 'Montserrat', sans-serif; text-align: left;">
-      <div style="margin-bottom: 1rem;">
-        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-          <strong>CBU:</strong> <span id="cbu" style="user-select: all;">0000003100000012</span>
-          <button onclick="copyCBU()" style="background: none; border: none; cursor: pointer; vertical-align: middle;" title="Copiar CBU">
-            <dotlottie-player src="https://lottie.host/26250e67-40b0-40db-8b76-4a59056ef36a/DdkIYGPZBn.lottie" background="transparent" speed="1" style="width: 40px; height: 40px;" loop autoplay></dotlottie-player>
-          </button>
-        </p>
-        <p style="font-size: 1.1rem; margin-bottom: 0;"><strong>Alias:</strong></p>
-        <p id="alias" style="font-size: 1rem; margin-bottom: 1rem;"></p>
-      </div>
-      <p id="copy-confirm" style="font-size: 0.9rem; color: green; display: none;">¡CBU copiado!</p>
-    </div>
-  </div> <!-- cierre de .modal-content -->
-</div> <!-- cierre de #giftModal -->
-<div class="separador-sombra"></div>
 <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 <section class="share-wrapper">
   <div class="share-title">Compartimos este día junto a vos</div>
